@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+    ServerName 192.168.0.10
+    ServerAlias 192.168.0.10
+    ServerAdmin abc@qq.com
+  
+    <Directory /var/www/website>
+        Require all granted
+    </Directory>
+  
+    WSGIScriptAlias / /var/www/website/website/wsgi.py
+  
+    <Directory /var/www/website/website>
+    <Files wsgi.py>
+        Require all granted
+    </Files>
+    </Directory>
+</VirtualHost>
